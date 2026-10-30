@@ -1,0 +1,260 @@
+:root{
+  /* Institucional UACAM (aproximado: ajustar con los colores oficiales) */
+  --azul:#10305f; --azul-2:#1d4d8f; --oro:#d6a82b; --oro-suave:#f3e2a9;
+  
+  --fondo:#f2f5fa; --tinta:#14213a; --linea:#c5d0e2; --blanco:#fff;
+  --sombra:4px 4px 0 var(--azul);
+  --lado:260px;
+  /* Fora de Lugar, sacada del arte del juego */
+  --fora-oscuro:#181c1d; --fora-oxido:#7d3114; --fora-ambar:#d38446; --fora-crema:#f3d9a4;
+}
+*{box-sizing:border-box}
+img{max-width:100%;height:auto}
+html{scroll-behavior:smooth;scroll-padding-top:1rem}
+body{margin:0;font:1rem/1.65 "IBM Plex Sans",system-ui,sans-serif;color:var(--tinta);background:var(--fondo)}
+a{color:var(--azul-2)}
+:focus-visible{outline:3px solid var(--oro);outline-offset:2px}
+
+/* Menú lateral tipo documentación */
+.lado{position:fixed;top:0;bottom:0;left:0;width:var(--lado);background:var(--azul);color:#fff;padding:1.25rem 1rem;overflow-y:auto;z-index:20}
+.lado .logos{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem}
+.lado .logos .arte{width:56px;height:56px;background:var(--blanco)}
+.lado h2{font:.7rem/1.6 "Press Start 2P",monospace;color:var(--oro);margin:0 0 1.25rem}
+.lado nav a{display:block;color:#dbe6f7;text-decoration:none;padding:.45rem .75rem;border-left:4px solid transparent}
+.lado nav a.sub{padding-left:1.75rem;font-size:.9rem}
+.lado nav a:hover{background:var(--azul-2)}
+.lado nav a.activo{border-left-color:var(--oro);background:var(--azul-2);color:#fff}
+.boton-menu{display:none}
+
+main{margin-left:var(--lado);max-width:calc(var(--lado) + 52rem);padding:0 2rem 3rem}
+section{padding:3rem 0 1rem;border-bottom:4px dotted var(--linea)}
+section:last-of-type{border-bottom:0}
+h1,h2.t{font-family:"Press Start 2P",monospace;font-weight:400;color:var(--azul);line-height:1.5}
+h1{font-size:clamp(1.4rem,4vw,2.2rem);margin:.5rem 0 1rem}
+h2.t{font-size:clamp(1rem,2.4vw,1.25rem);margin:0 0 1.25rem;padding-bottom:.75rem;border-bottom:4px solid var(--oro)}
+h3{color:var(--azul);margin:1.75rem 0 .5rem;font-size:1.1rem}
+p{max-width:68ch}
+
+/* Portada */
+.portada{padding-top:2.5rem}
+.portada .sub{font-size:1.15rem;max-width:52ch}
+.btn{display:inline-block;background:var(--oro);color:var(--azul);font-weight:600;padding:.8rem 1.4rem;text-decoration:none;
+  border:3px solid var(--azul);box-shadow:var(--sombra);transition:transform .08s,box-shadow .08s}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--azul)}
+.btn:active{transform:translate(4px,4px);box-shadow:none}
+
+/* Tarjetas con borde pixelado */
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.25rem;margin-top:1rem}
+.tarjeta{background:var(--blanco);border:3px solid var(--azul);box-shadow:var(--sombra);padding:1rem}
+.tarjeta h3{margin:.75rem 0 .25rem}
+.tarjeta p{margin:.25rem 0 0;font-size:.95rem}
+.tarjeta .rol{color:var(--azul-2);font-weight:600}
+
+/* Espacios para arte (sprites, ilustraciones, logos) */
+.arte{position:relative;display:grid;place-items:center;background:var(--oro-suave);image-rendering:pixelated;aspect-ratio:1/1;overflow:hidden}
+.arte img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated}
+.arte .falta{display:none;font-size:.75rem;text-align:center;padding:.5rem;color:var(--azul)}
+.arte.missing img{display:none}
+.arte.missing .falta{display:block}
+
+/* Marcas de contenido pendiente (se borran al llenarlas) */
+.pendiente{border:2px dashed var(--azul-2);background:var(--blanco);padding:.6rem .9rem;font-size:.92rem;color:var(--azul)}
+.pendiente::before{content:"Por completar: ";font-weight:600}
+
+.demo{background:var(--azul);color:#fff;padding:1.25rem;border:3px solid var(--oro);box-shadow:var(--sombra);margin-top:1rem}
+.demo p{margin:.25rem 0 1rem}
+footer{margin-left:var(--lado);padding:1.5rem 2rem;background:var(--azul);color:#dbe6f7;font-size:.9rem}
+
+@media (max-width:860px){
+  :root{--lado:0px}
+  .lado{transform:translateX(-100%);width:260px;transition:transform .2s}
+  .lado.abierto{transform:none}
+  .boton-menu{display:block;position:fixed;top:.6rem;left:.6rem;z-index:30;background:var(--oro);color:var(--azul);border:3px solid var(--azul);font:.7rem "Press Start 2P",monospace;padding:.6rem .7rem;cursor:pointer}
+  main{padding:3.5rem 1.1rem 2rem}
+  footer{padding:1.25rem 1.1rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.lado{transition:none}}
+
+.tarjeta{border-top:8px solid var(--fora-oxido)}
+.hero{background:var(--fora-oscuro);color:var(--fora-crema);border:3px solid var(--azul);box-shadow:var(--sombra);margin:1rem 0 1.5rem}
+.hero img{display:block;width:100%;height:auto;image-rendering:pixelated}
+.hero .texto{padding:1.25rem 1.5rem}
+.hero h1{color:var(--oro);margin-top:0}
+.hero p{margin:.5rem 0 1.25rem}
+.escena{display:grid;place-items:end center;background:var(--fora-oscuro);height:200px;padding-bottom:.5rem}
+.pepe{width:86px;height:170px;background:url(img/pepe-sprite.webp) 0 0/516px 170px no-repeat;image-rendering:pixelated;animation:paso .9s steps(6) infinite}
+@keyframes paso{to{background-position:-516px 0}}
+.mecanicas{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.75rem;margin:1rem 0}
+.mecanicas div{background:var(--fora-crema);border-left:6px solid var(--fora-oxido);padding:.6rem .9rem}
+.mecanicas strong{display:block;color:var(--fora-oxido)}
+.actos{list-style:none;padding:0;margin:1rem 0;display:grid;gap:1rem}
+.actos li{background:var(--blanco);border:3px solid var(--azul);border-left:10px solid var(--fora-oxido);padding:.5rem 1rem}
+.actos h3{margin:.25rem 0}
+.galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin:1rem 0}
+.galeria figure{margin:0;background:var(--fora-oscuro);border:3px solid var(--azul);box-shadow:var(--sombra)}
+.galeria img{display:block;width:100%;height:auto;image-rendering:pixelated}
+.galeria figcaption{padding:.5rem .75rem;font-size:.9rem;color:var(--fora-crema)}
+.cita{border-left:6px solid var(--oro);background:var(--blanco);padding:.6rem 1rem;max-width:68ch}
+footer{display:flex;align-items:center;gap:1rem}
+footer img{width:48px;height:auto;image-rendering:pixelated}
+@media (prefers-reduced-motion:reduce){.pepe{animation:none}}
+
+.retrato{margin:-1rem -1rem .5rem;border-bottom:3px solid var(--azul)}
+.retrato img{display:block;width:100%;height:auto;image-rendering:pixelated}
+.hero .texto{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1rem}
+.hero .texto>div:first-child{flex:1 1 20rem}
+.equipo-correo{word-break:break-all;font-size:.9rem}
+
+.fotos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.75rem;margin:.75rem 0}
+.fotos figure{margin:0;border:3px solid var(--azul);background:var(--fora-oscuro)}
+.fotos img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:contain;background:#000;image-rendering:pixelated}
+.fotos figcaption{padding:.35rem .6rem;font-size:.85rem;color:var(--fora-crema)}
+.controles{margin:.5rem 0 .75rem;padding-left:1.25rem}
+.controles li{margin:.2rem 0}
+.lado nav .grupo{margin:1.1rem .75rem .3rem;color:var(--oro);font-size:.85rem;font-weight:600}
+
+.marca .insti{background:#fff;border:3px solid var(--oro);padding:.7rem;display:grid;justify-items:center;gap:.6rem}
+.marca .insti img{display:block}
+.marca .l-uacam{width:92px}
+.marca .l-fi{width:100%;max-width:200px}
+.marca .fora{display:block;margin:1rem 0 1.25rem}
+.marca .fora img{display:block;width:78%;margin:0 auto}
+
+.marca .l-uacam{width:100%;max-width:220px}
+footer img{width:72px;height:auto}
+.hero{border:4px solid var(--oro);box-shadow:0 0 0 4px var(--azul),10px 10px 0 4px var(--fora-oxido);margin:1.25rem 10px 2rem 4px}
+.fotos,.galeria{gap:1.6rem;padding:6px 14px 10px 6px}
+.fotos figure,.galeria figure{border:4px solid var(--oro);box-shadow:0 0 0 4px var(--azul),8px 8px 0 4px var(--fora-oxido);background:var(--fora-oscuro)}
+.fotos figcaption,.galeria figcaption{border-top:4px solid var(--azul)}
+.retrato{border-bottom:4px solid var(--oro)}
+.demo{border:4px solid var(--oro);box-shadow:0 0 0 4px var(--azul),8px 8px 0 4px var(--fora-oxido);margin:1.5rem 10px 1rem 4px}
+
+
+/* =====================================================================
+   SCROLLYTELLING v2 · controlador de scroll
+   Todo el color sale de las variables del :root (azul, oro, fora-*).
+   Se activa solo con JS (html.js-scrolly) y se desactiva con
+   prefers-reduced-motion: en ese caso la página queda como el original.
+   Lo que se anima usa solo transform y opacity.
+   ===================================================================== */
+
+/* ---- Invitación a deslizar (portada) ---- */
+.cue{display:inline-block;margin-left:1rem;font:.6rem/1.6 "Press Start 2P",monospace;color:var(--oro);text-decoration:none;
+  animation:rebote 1s steps(2) infinite}
+.cue:hover{color:var(--fora-crema)}
+@keyframes rebote{50%{transform:translateY(4px)}}
+.pepe.pausa{animation-play-state:paused}
+
+/* ---- Camino de lectura: Pepe avanza con el scroll ---- */
+.camino{display:none;position:fixed;left:var(--lado);right:0;bottom:0;height:68px;pointer-events:none;z-index:15}
+.js-scrolly .camino{display:block}
+.camino-pista{position:absolute;left:0;right:0;bottom:0;height:10px;background:var(--azul);
+  background-image:repeating-linear-gradient(90deg,transparent 0 10px,var(--azul-2) 10px 12px)}
+.camino-avance{position:absolute;left:0;top:2px;bottom:2px;width:100%;background:var(--oro);
+  transform-origin:0 50%;transform:scaleX(0);will-change:transform}
+.guia{position:absolute;left:0;bottom:8px;width:86px;height:170px;overflow:hidden;
+  transform-origin:50% 100%;transform:translate3d(-28px,0,0) scale(.34,.34);will-change:transform}
+.guia-hoja{width:516px;height:170px;background:url(img/pepe-sprite.webp) 0 0/516px 170px no-repeat;image-rendering:pixelated;
+  animation:hoja .9s steps(6) infinite;animation-play-state:paused;will-change:transform}
+.camina .guia-hoja{animation-play-state:running}
+@keyframes hoja{to{transform:translate3d(-516px,0,0)}}
+
+/* ---- Revelado al entrar en pantalla ---- */
+.js-scrolly .revela{opacity:0;transform:translateY(22px);
+  transition:opacity .55s ease-out,transform .55s ease-out;transition-delay:calc(var(--i,0)*90ms)}
+.js-scrolly .revela.pixel{transform:translateY(18px);transition-timing-function:steps(5,end)}
+.js-scrolly .revela.visible{opacity:1;transform:none}
+/* la raya dorada de cada título se "dibuja" */
+.js-scrolly h2.t.revela{border-bottom-color:transparent;background:linear-gradient(var(--oro),var(--oro)) 0 100%/0 4px no-repeat;background-origin:border-box;
+  transition:opacity .55s ease-out,transform .55s ease-out,background-size .8s steps(10,end) .2s}
+.js-scrolly h2.t.revela.visible{background-size:100% 4px}
+
+/* ---- Escenario pegajoso (Escenas y Minijuegos) ---- */
+.scrolly{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:2rem;align-items:start;margin:1.25rem 0 1rem}
+.scrolly .pasos{grid-column:1;grid-row:1;margin:0;padding:0;gap:0;list-style:none}
+.escenario{grid-column:2;grid-row:1;position:sticky;top:0;height:100vh;padding:1rem 0 5rem;
+  display:flex;flex-direction:column;justify-content:center;gap:.8rem}
+.escenario-cab{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.escenario-num{font:.7rem/1.6 "Press Start 2P",monospace;color:var(--fora-oxido)}
+.escenario-foto{font:.6rem/1.6 "Press Start 2P",monospace;color:var(--azul-2)}
+.escenario-tit{flex-basis:100%;font-weight:600;font-size:1.1rem;color:var(--azul);line-height:1.3}
+
+.marco-escena{display:grid;margin:8px 12px 12px 4px;border:4px solid var(--oro);background:var(--fora-oscuro);
+  box-shadow:0 0 0 4px var(--azul),8px 8px 0 4px var(--fora-oxido)}
+.toma{grid-area:1/1;margin:0;opacity:0;transition:opacity .35s steps(4,end)}
+.toma.activa{opacity:1}
+.toma .lienzo{overflow:hidden;aspect-ratio:16/10;background:#000}
+.toma img{display:block;width:100%;height:100%;object-fit:contain;color:transparent;transform-origin:50% 50%}
+.toma.activa img{will-change:transform}
+.toma figcaption{padding:.4rem .75rem;font-size:.9rem;color:var(--fora-crema);border-top:4px solid var(--azul)}
+
+/* Estado de Pepe: las cinco barras de la historia, que cambian de escena en escena */
+.hud{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1.25rem;margin:0 12px 0 4px}
+.hud-tit{grid-column:1/-1;font:.58rem/1.6 "Press Start 2P",monospace;color:var(--azul-2)}
+.stat{display:grid;grid-template-columns:5.4rem 1fr;align-items:center;gap:.5rem}
+.stat-n{font-size:.68rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--azul)}
+.barra{position:relative;height:12px;background:var(--linea);overflow:hidden}
+.barra i{position:absolute;inset:0;background:var(--c,var(--oro));transform-origin:0 50%;
+  transform:scaleX(calc(var(--v,0) / 10));transition:transform .7s steps(10,end)}
+.barra::after{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,transparent 0 calc(10% - 2px),var(--fondo) calc(10% - 2px) 10%)}
+.stat[data-k=energia]{--c:var(--oro)}
+.stat[data-k=estres]{--c:var(--fora-oxido)}
+.stat[data-k=felicidad]{--c:var(--fora-ambar)}
+.stat[data-k=dinero]{--c:var(--azul-2)}
+.stat[data-k=relaciones]{--c:var(--azul)}
+.hud-nota{grid-column:1/-1;margin:0;font-size:.7rem;line-height:1.4;color:var(--azul-2)}
+
+/* Indicador de pasos: cuadritos pixelados, también sirven para saltar */
+.puntos{display:flex;flex-wrap:wrap;gap:.5rem;padding-left:4px}
+.punto{width:20px;height:20px;padding:0;cursor:pointer;background:var(--blanco);border:3px solid var(--azul);transition:transform .08s,box-shadow .08s}
+.punto:hover{transform:translate(-1px,-1px);box-shadow:2px 2px 0 var(--azul)}
+.punto.hecho{background:var(--oro-suave)}
+.punto.activo{background:var(--oro);box-shadow:3px 3px 0 var(--azul);transform:translate(-1px,-1px)}
+
+/* Cada paso ocupa tanto scroll como fotos tiene; la tarjeta se queda pegada */
+.scrolly .pasos>.zona{min-height:max(calc(var(--n,1)*55vh),26rem);margin:0;padding:0;border:0;background:none;display:block}
+.scrolly .carta{position:sticky;top:24vh;background:var(--blanco);border:3px solid var(--azul);border-left:10px solid var(--fora-oxido);
+  padding:.5rem 1rem 1rem;opacity:.4;transition:opacity .3s}
+/* la sombra pixelada aparece con opacity (más barato que animar box-shadow) */
+.scrolly .carta::after{content:"";position:absolute;inset:-3px -3px -3px -10px;box-shadow:var(--sombra);
+  opacity:0;transition:opacity .3s;pointer-events:none;z-index:-1}
+.scrolly .zona.activa .carta{opacity:1}
+.scrolly .zona.activa .carta::after{opacity:1}
+.scrolly .carta .fotos{display:none}
+.scrolly .carta .controles{margin-bottom:0}
+
+/* Las citas se escriben letra por letra, como un diálogo de juego */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.js-scrolly .cita .c{opacity:0}
+.js-scrolly .zona.activa .cita .c{animation:tecla 1ms steps(1,end) forwards;animation-delay:calc(.3s + var(--c)*26ms)}
+.js-scrolly .zona.leida .cita .c{opacity:1;animation:none}
+@keyframes tecla{to{opacity:1}}
+
+/* ---- Tablet y celular: el escenario se queda arriba y el texto corre debajo ---- */
+@media (max-width:1100px){
+  .scrolly{display:flex;flex-direction:column;gap:0}
+  .scrolly .escenario{order:-1;position:sticky;top:0;height:auto;padding:var(--pad-esc,.5rem) 0 .5rem;background:var(--fondo);z-index:6;gap:.5rem}
+  .marco-escena{width:min(100%,calc(34vh*1.6));margin:4px auto 10px}
+  .escenario-tit{font-size:1rem}
+  .scrolly .carta{top:calc(var(--alto-esc,16rem) + .75rem)}
+  .scrolly .pasos>.zona{min-height:max(calc(var(--n,1)*50vh),22rem)}
+  .hud{grid-template-columns:repeat(5,minmax(0,1fr));gap:.25rem .4rem;margin:0 4px}
+  .hud-tit,.hud-nota{display:none}
+  .stat{grid-template-columns:1fr;gap:.15rem}
+  .stat-n{font-size:.52rem;letter-spacing:0}
+  .barra{height:10px}
+}
+@media (max-width:860px){
+  .scrolly{--pad-esc:3.4rem}   /* deja libre el botón MENÚ */
+  .camino{height:60px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .cue{animation:none}
+  .camino{display:none!important}
+}
+@media print{
+  .camino{display:none!important}
+  .js-scrolly .revela{opacity:1!important;transform:none!important}
+}

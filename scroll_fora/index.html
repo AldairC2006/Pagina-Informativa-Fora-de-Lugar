@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10305f">
+<title>Fora de Lugar | Universidad Autónoma de Campeche</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<button class="boton-menu" aria-label="Abrir menú" aria-expanded="false">MENÚ</button>
+
+<!-- Camino de lectura: Pepe avanza conforme se hace scroll -->
+<div class="camino" aria-hidden="true">
+  <div class="camino-pista"><div class="camino-avance"></div></div>
+  <div class="guia"><div class="guia-hoja"></div></div>
+</div>
+
+<aside class="lado" id="lado">
+  <div class="marca">
+    <div class="insti">
+      <img class="l-uacam" src="img/uacam.webp" alt="UACAM Evoluciona" width="800" height="220" decoding="async">
+      <img class="l-fi" src="img/facultad.webp" alt="Facultad de Ingeniería" width="345" height="98" decoding="async">
+    </div>
+    <a class="fora" href="#inicio"><img src="img/fora-logo.webp" alt="Fora de Lugar" width="520" height="431" decoding="async"></a>
+  </div>
+  <nav aria-label="Secciones">
+    <p class="grupo">Proyecto</p>
+    <a href="#inicio">Inicio</a>
+    <a href="#historia">Historia</a>
+    <a href="#personajes">Personajes</a>
+    <a href="#escenas">Escenas</a>
+    <p class="grupo">Investigación</p>
+    <a href="#desarrollo">Cómo se desarrolló</a>
+    <a class="sub" href="#herramientas">Herramientas</a>
+    <a class="sub" href="#minijuegos">Minijuegos</a>
+    <a class="sub" href="#arte">Arte y diseño</a>
+    <a class="sub" href="#encuesta">Encuesta</a>
+    <a href="#actualidad">Actualidad</a>
+    <a href="#futuro">Desarrollo futuro</a>
+    <a href="#documentacion">Documentación</a>
+    <p class="grupo">Acerca de</p>
+    <a href="#equipo">Equipo</a>
+    <a href="#versiones">Historial de versiones</a>
+  </nav>
+</aside>
+
+<main>
+  <section id="inicio" class="portada">
+    <div class="hero">
+      <img src="img/portada.webp" alt="Calle de un pueblo al atardecer con el título Fora de Lugar" width="1024" height="683" decoding="async" fetchpriority="high">
+      <div class="texto"><div>
+        <h1>Fora de Lugar</h1>
+        <p>Lejos de casa, cerca de tu historia. Un videojuego narrativo 2D de simulación de vida, en pixel art, sobre la experiencia de los estudiantes foráneos.</p>
+        <a class="btn" href="https://al075462uacammx.itch.io/fora-de-lugar-demo" target="_blank" rel="noopener">Jugar el demo en itch.io</a>
+        <a class="cue" href="#historia">▾ Desliza</a>
+        </div>
+        <div class="pepe" role="img" aria-label="Pepe caminando con una bandeja"></div>
+      </div>
+    </div>
+    <div class="demo" id="demo">
+      <strong>Demo jugable</strong>
+      <p>Aquí va el juego incrustado.</p>
+      <div class="pendiente">Código de inserción (embed) de itch.io, para mostrar el juego dentro de esta página.</div>
+    </div>
+  </section>
+
+  <section id="historia">
+    <h2 class="t">Historia</h2>
+    <p>Pepe es un estudiante de Ingeniería en Tecnología de Software que llega de Seybaplaya a Campeche para continuar sus estudios. El juego está pensado como un semestre de 90 días, dividido en diez actos, y cada decisión afecta su energía, estrés, felicidad, dinero y relaciones. El demo actual cubre las primeras escenas.</p>
+    <p>Fora de Lugar quiere hacer visible lo que viven los jóvenes que dejan su lugar de origen para estudiar: administrar el dinero, pagar la renta, comer, moverse por la ciudad, trabajar y estudiar al mismo tiempo, y adaptarse a un lugar nuevo.</p>
+    <h3>Cómo nació</h3>
+    <p>La idea surgió en el tercer semestre de la carrera, en la materia de Programación Orientada a Objetos, cuando el equipo trabajaba con Greenfoot. Nació de conversaciones con compañeros foráneos que contaban lo difícil que era vivir lejos de casa. Con el tiempo, el proyecto pasó a ser un videojuego en Godot.</p>
+    <h3>Qué se hace en el juego</h3>
+    <div class="mecanicas">
+      <div><strong>Exploración</strong>Recorrido por el pueblo y lugares importantes.</div>
+      <div><strong>Decisiones</strong>Elecciones que afectan la historia.</div>
+      <div><strong>Relaciones</strong>Interacción con familiares y amigos.</div>
+      <div><strong>Sistema emocional</strong>Las emociones influyen en algunas decisiones.</div>
+      <div><strong>Gestión de recursos</strong>Administración de dinero, tiempo y energía.</div>
+      <div><strong>Minijuegos</strong>Actividades cotidianas de la vida diaria.</div>
+    </div>
+  </section>
+
+  <section id="personajes">
+    <h2 class="t">Personajes</h2>
+    <div class="rejilla">
+      <article class="tarjeta"><div class="retrato"><img src="img/retrato-pepe.webp" alt="Retrato de Pepe con gorra y sudadera oscura" width="350" height="432" decoding="async" loading="lazy"></div><h3>Pepe</h3><p class="rol">Protagonista</p><p>Estudiante de Ingeniería en Tecnología de Software que llega de Seybaplaya a Campeche.</p></article>
+      <article class="tarjeta"><div class="retrato"><img src="img/retrato-mama.webp" alt="Retrato de la mamá de Pepe con delantal" width="365" height="436" decoding="async" loading="lazy"></div><h3>Mamá de Pepe</h3><p class="rol">Apoyo a distancia</p><p>Llama a Pepe por teléfono y le pide que no gaste mucho.</p></article>
+      <article class="tarjeta"><div class="retrato"><img src="img/retrato-dona-mary.webp" alt="Retrato de Doña Mary sonriendo" width="355" height="440" decoding="async" loading="lazy"></div><h3>Doña Mary</h3><p class="rol">Dueña del puesto de panuchos</p><p>Pepe va a su puesto a buscar empleo y ella le dice que sí.</p></article>
+    </div>
+  </section>
+
+  <section id="escenas">
+    <h2 class="t">Escenas</h2>
+    <p>El demo recorre estas escenas, en orden:</p>
+    <ol class="actos" data-scrolly data-etiqueta="Escena">
+      <li data-energia="6" data-estres="4" data-felicidad="6" data-dinero="8" data-relaciones="7"><h3>La llegada</h3><p>Pepe llega.</p><div class="fotos"><figure><img src="img/escena-01a.webp" alt="Pepe sentado en la combi mirando por la ventana al atardecer" loading="lazy" width="900" height="610" decoding="async"><figcaption>Pepe en la combi</figcaption></figure><figure><img src="img/escena-01b.webp" alt="Pepe de espaldas frente a una puerta abierta con dos maletas" loading="lazy" width="900" height="565" decoding="async"><figcaption>Pepe llega con sus maletas</figcaption></figure></div></li>
+      <li data-energia="5" data-estres="4" data-felicidad="5" data-dinero="8" data-relaciones="7"><h3>El cuarto</h3><p>Pepe se queda en su cuarto y lo limpia, en un minijuego de limpiar.</p><div class="fotos"><figure><img src="img/escena-02.webp" alt="Pepe acostado recordando a su mamá que le dice que ordene su cuarto" loading="lazy" width="900" height="562" decoding="async"><figcaption>Recuerdo de su mamá pidiéndole que ordene su cuarto</figcaption></figure></div></li>
+      <li data-energia="5" data-estres="4" data-felicidad="5" data-dinero="8" data-relaciones="8"><h3>Camino al súper</h3><p>Pepe camina al súper y recibe una llamada de su mamá.</p><p class="cita">«Está bien, hijo. Compra solo lo necesario y no gastes de más. Cuídate mucho.»</p><div class="fotos"><figure><img src="img/escena-03.webp" alt="Pepe caminando por la calle mientras habla por teléfono con su mamá" loading="lazy" width="900" height="574" decoding="async"><figcaption>Llamada de Mamá</figcaption></figure></div></li>
+      <li data-energia="5" data-estres="7" data-felicidad="4" data-dinero="2" data-relaciones="7"><h3>El súper</h3><p>Pepe hace la compra, en otro minijuego.</p><div class="fotos"><figure><img src="img/escena-04.webp" alt="Pepe sorprendido frente a la cajera con el carrito lleno" loading="lazy" width="900" height="550" decoding="async"><figcaption>En la caja</figcaption></figure></div></li>
+      <li data-energia="5" data-estres="8" data-felicidad="3" data-dinero="1" data-relaciones="6"><h3>Sin dinero</h3><p>Pepe se queda sin dinero y necesita buscar empleo. Va al puesto de panuchos de Doña Mary y ella le dice que sí.</p><p class="cita">«Creo que me emocioné con la despensa, ahora necesito conseguir un trabajo…»</p><div class="fotos"><figure><img src="img/escena-05a.webp" alt="Manos contando un billete de cien pesos y monedas" loading="lazy" width="900" height="523" decoding="async"><figcaption>Contando lo que le queda</figcaption></figure><figure><img src="img/escena-05b.webp" alt="Fachada del puesto de Doña Mary con una mesa afuera" loading="lazy" width="900" height="522" decoding="async"><figcaption>El puesto de Doña Mary</figcaption></figure><figure><img src="img/escena-05c.webp" alt="Pepe hablando con Doña Mary a través de la ventana de la cocina" loading="lazy" width="880" height="560" decoding="async"><figcaption>Pepe con Doña Mary</figcaption></figure></div></li>
+      <li data-energia="3" data-estres="6" data-felicidad="4" data-dinero="3" data-relaciones="6"><h3>El restaurante</h3><p>Pepe empieza a trabajar y entrega platillos a las mesas.</p><div class="fotos"><figure><img src="img/escena-06.webp" alt="Pepe entre las mesas del restaurante con el contador de platillos entregados" loading="lazy" width="900" height="532" decoding="async"><figcaption>Platillos entregados</figcaption></figure></div></li>
+      <li data-energia="3" data-estres="6" data-felicidad="2" data-dinero="3" data-relaciones="3"><h3>La escuela</h3><p>En una cinemática, Pepe va a la escuela y ve a sus compañeros felices. Se pone triste y nostálgico por su pueblo.</p><div class="fotos"><figure><img src="img/escena-07.webp" alt="Pepe de espaldas viendo a un grupo de compañeros reír en la escuela" loading="lazy" width="900" height="543" decoding="async"><figcaption>Pepe observa a sus compañeros</figcaption></figure></div></li>
+      <li data-energia="2" data-estres="7" data-felicidad="2" data-dinero="3" data-relaciones="2"><h3>El camión</h3><p>Pepe va pensativo en el camión.</p><p class="cita">«Ver a todos felices en la escuela… me hizo sentir que no encajo aquí».</p><div class="fotos"><figure><img src="img/escena-08.webp" alt="Pepe abrazándose en el camión con el atardecer de fondo" loading="lazy" width="900" height="504" decoding="async"><figcaption>En el camión</figcaption></figure></div></li>
+      <li data-energia="2" data-estres="9" data-felicidad="2" data-dinero="3" data-relaciones="3"><h3>De vuelta en su cuarto</h3><p>Pepe llega a su cuarto y se queda pensando.</p><p class="cita">«¿Cómo voy a equilibrar la escuela y el trabajo…? Apenas puedo con todo. Extraño mi casa…»</p><div class="fotos"><figure><img src="img/escena-09.webp" alt="Pepe sentado en el piso de su cuarto con las manos en la cabeza" loading="lazy" width="900" height="555" decoding="async"><figcaption>Pepe en su cuarto</figcaption></figure></div></li>
+      <li data-energia="3" data-estres="7" data-felicidad="4" data-dinero="4" data-relaciones="4"><h3>Pasan los días</h3><p>Pepe se pone el mandil y dice que todavía sigue llorando, pero con menos frecuencia.</p><p class="cita">«La misma rutina de siempre: escuela, trabajo y llorar… aunque últimamente ya lo hago menos».</p><div class="fotos"><figure><img src="img/escena-10.webp" alt="Pepe de espaldas amarrándose el mandil en la cocina" loading="lazy" width="900" height="523" decoding="async"><figcaption>Pepe se pone el mandil</figcaption></figure></div></li>
+    </ol>
+  </section>
+
+  <section id="desarrollo">
+    <h2 class="t">Cómo se desarrolló</h2>
+
+    <h3 id="herramientas">Herramientas</h3>
+    <p>El juego está hecho en Godot 4 con GDScript, y el equipo trabaja el código en GitHub. También se usaron ChatGPT y Gemini, y Pixilart para los minijuegos.</p>
+
+    <h3 id="minijuegos">Minijuegos</h3>
+    <div class="pasos" data-scrolly data-etiqueta="Minijuego">
+    <div class="paso" data-titulo="Limpiar el cuarto">
+    <p><strong>Limpiar el cuarto.</strong> Pepe barre el cuarto, saca la basura y acomoda los muebles.</p>
+    <ul class="controles">
+      <li>Flechas: moverse.</li>
+      <li>Mantener la tecla A: quitar el polvo.</li>
+      <li>Barra espaciadora: poner la basura.</li>
+      <li>Muebles: se arrastran a su lugar.</li>
+    </ul>
+    <div class="fotos"><figure><img src="img/minijuego-limpiar-1.webp" alt="Pepe en el cuarto con nubes de polvo y un bote de basura" loading="lazy" width="900" height="548" decoding="async"><figcaption>Barrer el cuarto</figcaption></figure><figure><img src="img/minijuego-limpiar-2.webp" alt="Muebles flotando arriba y sus siluetas negras en el piso del cuarto" loading="lazy" width="900" height="537" decoding="async"><figcaption>Acomodar los muebles</figcaption></figure><figure><img src="img/minijuego-limpiar-3.webp" alt="Pantalla de controles con flechas, barra espaciadora y tecla A" loading="lazy" width="900" height="538" decoding="async"><figcaption>Controles de limpiar</figcaption></figure></div>
+    </div>
+    <div class="paso" data-titulo="El súper">
+    <p><strong>El súper.</strong> Pepe va de compras con un presupuesto de $600 y una lista de productos.</p>
+    <ul class="controles">
+      <li>Flechas: moverse.</li>
+      <li>Tecla A: entrar al portal de un pasillo.</li>
+      <li>Reunir todos los productos de la lista.</li>
+      <li>Botón regresar: volver al área de caja.</li>
+      <li>Enter: cobrar en la caja.</li>
+    </ul>
+    <div class="fotos"><figure><img src="img/minijuego-super-1.webp" alt="Mapa del supermercado con pasillos numerados, estantes y el dinero disponible" loading="lazy" width="900" height="535" decoding="async"><figcaption>El súper</figcaption></figure><figure><img src="img/minijuego-super-2.webp" alt="Pantalla de controles del supermercado" loading="lazy" width="900" height="606" decoding="async"><figcaption>Controles del súper</figcaption></figure></div>
+    </div>
+    <div class="paso" data-titulo="Servir platillos">
+    <p><strong>Servir platillos.</strong> Pepe entrega los platillos a las mesas del restaurante.</p>
+    <ul class="controles">
+      <li>Flechas: moverse.</li>
+      <li>Objetivo: servir todos los platillos del panel superior (la meta es 5), entregando los pedidos correctos.</li>
+      <li>Para entregar, acercarse a la mesa.</li>
+      <li>Cuidado: evitar chocar con los perritos. Cada choque quita uno de los tres corazones.</li>
+    </ul>
+    <div class="fotos"><figure><img src="img/minijuego-restaurante.webp" alt="Pantalla de controles del restaurante con movimiento, objetivo, entrega y cuidado con los perritos" loading="lazy" width="900" height="638" decoding="async"><figcaption>Controles del restaurante</figcaption></figure></div>
+
+    </div>
+    </div>
+
+    <h3 id="arte">Arte y diseño</h3>
+    <div class="galeria">
+      <figure><img src="img/arte-1.webp" alt="Collage del proyecto con escenas, personaje, objetivos, mochila y estadísticas" loading="lazy" width="1100" height="733" decoding="async"><figcaption>Visualización del proyecto</figcaption></figure>
+      <figure><img src="img/arte-2.webp" alt="Pepe de espaldas en un cuarto vacío con una ventana y una puerta" loading="lazy" width="1000" height="563" decoding="async"><figcaption>Cuarto vacío</figcaption></figure>
+      <figure><img src="img/arte-3.webp" alt="Pepe acostado recordando a su mamá pidiéndole que ordene su cuarto" loading="lazy" width="1000" height="750" decoding="async"><figcaption>Recuerdo de una reprimenda nocturna</figcaption></figure>
+      <figure><img src="img/arte-4.webp" alt="Manos contando un billete de cien pesos y monedas en la calle" loading="lazy" width="1000" height="750" decoding="async"><figcaption>Contando pesos en la calle</figcaption></figure>
+    </div>
+    <div class="pendiente">Cómo fue el proceso de arte y diseño: herramientas, referencias y pasos.</div>
+
+    <h3 id="encuesta">Encuesta «Viviendo Lejos»</h3>
+    <p>El equipo aplicó la encuesta «Viviendo Lejos: Encuesta de Experiencias de Estudiantes Foráneos».</p>
+    <p>Para medir el efecto del juego se aplicarán cuestionarios antes y después de jugar, con escala del 1 al 5. Esa evaluación todavía no se ha realizado, así que por ahora no hay resultados.</p>
+    <div class="pendiente">Resultados de «Viviendo Lejos» que quieras mostrar y cuántas personas respondieron.</div>
+  </section>
+
+  <section id="actualidad">
+    <h2 class="t">Actualidad</h2>
+    <p>Fora de Lugar ya tiene una propuesta narrativa definida sobre las experiencias de los estudiantes foráneos. Se desarrollaron los conceptos principales de la historia, los personajes, los escenarios y las mecánicas.</p>
+    <p>También se trabajó el estilo visual en pixel art y los prototipos que representan situaciones cotidianas de adaptación, independencia y vida lejos del hogar. El demo jugable ya incluye las escenas descritas arriba.</p>
+  </section>
+
+  <section id="futuro">
+    <h2 class="t">Desarrollo futuro</h2>
+    <p>Se planea ampliar la experiencia con nuevas rutas narrativas, personajes y eventos que muestren distintas realidades de los estudiantes foráneos. Los actos 7 a 10 están reservados para una segunda fase.</p>
+    <p>También se busca agregar más sistemas de interacción, dar más profundidad a las decisiones y crear varios finales según las acciones del jugador.</p>
+    <p>A largo plazo, el objetivo es consolidar Fora de Lugar como una experiencia educativa e interactiva que genere empatía y reflexión en un público más amplio, y seguir desarrollándola en Godot.</p>
+  </section>
+
+  <section id="documentacion">
+    <h2 class="t">Documentación</h2>
+    <p>El reporte científico del proyecto está en elaboración. Este es el resumen de lo que plantea:</p>
+    <h3>Pregunta de investigación</h3>
+    <p class="cita">¿En qué medida una experiencia interactiva como Fora de Lugar puede contribuir a generar conciencia y empatía sobre las dificultades que enfrentan los estudiantes foráneos al vivir lejos de su lugar de origen?</p>
+    <h3>Objetivo general</h3>
+    <p>Evaluar si jugar Fora de Lugar aumenta la concientización de estudiantes universitarios no foráneos sobre las dificultades que enfrentan los estudiantes foráneos.</p>
+    <h3>Hipótesis</h3>
+    <p>Interactuar con Fora de Lugar aumentará el nivel de concientización de los estudiantes no foráneos sobre las dificultades económicas, emocionales, académicas y sociales de los foráneos. Se comprobará comparando sus respuestas antes y después de jugar.</p>
+    <div class="pendiente">Enlace al reporte y a la presentación del proyecto, cuando estén listos.</div>
+  </section>
+
+  <section id="equipo">
+    <h2 class="t">Equipo</h2>
+    <div class="rejilla">
+      <article class="tarjeta"><h3>María Fernanda Suárez Arias</h3><p class="rol">Parte visual y front end</p><p class="equipo-correo"><a href="mailto:al069840@uacam.mx">al069840@uacam.mx</a></p></article>
+      <article class="tarjeta"><h3>Aldair E. Canul Cabrera</h3><p class="rol">Desarrollador (back end)</p><p class="equipo-correo"><a href="mailto:al075462@uacam.mx">al075462@uacam.mx</a></p></article>
+      <article class="tarjeta"><h3>Aaron D. Chi Uc</h3><p class="rol">Desarrollador (back end)</p><p class="equipo-correo"><a href="mailto:al076228@uacam.mx">al076228@uacam.mx</a></p></article>
+    </div>
+    <h3>Asesoría</h3>
+    <div class="rejilla">
+      <article class="tarjeta"><h3>Dr. Justino Ramírez Ortegón</h3><p class="rol">Asesor</p></article>
+      <article class="tarjeta"><h3>Dr. Joel C. Flores Escalante</h3><p class="rol">Coasesor</p></article>
+    </div>
+  </section>
+
+  <section id="versiones">
+    <h2 class="t">Historial de versiones</h2>
+    <div class="pendiente">Cada versión del juego con su fecha y un resumen corto de lo que cambió.</div>
+  </section>
+</main>
+
+<footer><img src="img/perrito.webp" alt="Perrito en pixel art" width="306" height="270" decoding="async" loading="lazy"><span>© 2026 Universidad Autónoma de Campeche · Facultad de Ingeniería. Todos los derechos reservados.</span></footer>
+
+<script src="funciones.js"></script>
+</body>
+</html>
