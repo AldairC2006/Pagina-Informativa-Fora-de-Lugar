@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10305f">
+<title>Fora de Lugar | Universidad Autónoma de Campeche</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<button class="boton-menu" aria-label="Abrir menú de navegación" aria-expanded="false">MENÚ</button>
+
+<!-- Camino de lectura: Pepe avanza de forma fluida conforme se hace scroll -->
+<div class="camino" aria-hidden="true">
+  <div class="camino-pista"><div class="camino-avance"></div></div>
+  <div class="guia"><div class="guia-hoja"></div></div>
+</div>
+
+<aside class="lado" id="lado">
+  <div class="marca">
+    <div class="insti">
+      <img class="l-uacam" src="img/uacam.webp" alt="UACAM Evoluciona" width="800" height="220" decoding="async">
+      <img class="l-fi" src="img/facultad.webp" alt="Facultad de Ingeniería" width="345" height="98" decoding="async">
+    </div>
+    <a class="fora" href="#inicio"><img src="img/fora-logo.webp" alt="Fora de Lugar Logo" width="520" height="431" decoding="async"></a>
+  </div>
+
+  <div class="audio-box">
+    <button id="btn-audio" class="btn-retro-audio" type="button" aria-label="Activar efectos de sonido de 8 bits">
+      <span class="audio-icon">🔊</span> <span class="audio-lbl">SONIDO: OFF</span>
+    </button>
+  </div>
+
+  <nav aria-label="Secciones del sitio">
+    <p class="grupo">Proyecto</p>
+    <a href="#inicio">Inicio</a>
+    <a href="#historia">Historia</a>
+    <a href="#personajes">Personajes</a>
+    <a href="#escenas">Escenas del Demo</a>
+    <p class="grupo">Investigación</p>
+    <a href="#desarrollo">Desarrollo</a>
+    <a class="sub" href="#herramientas">Herramientas</a>
+    <a class="sub" href="#minijuegos">Minijuegos</a>
+    <a class="sub" href="#demomenu">Demo Jugable</a>
+    <a class="sub" href="#arte">Arte y diseño</a>
+    <a class="sub" href="#encuesta">Encuesta</a>
+    <a href="#actualidad">Actualidad</a>
+    <a href="#futuro">Desarrollo futuro</a>
+    <a href="#documentacion">Documentación</a>
+    <p class="grupo">Acerca de</p>
+    <a href="#equipo">Equipo</a>
+    <a href="#versiones">Historial de versiones</a>
+  </nav>
+</aside>
+
+<main>
+  <!-- SECCIÓN INICIO -->
+  <section id="inicio" class="portada">
+    <div class="hero">
+      <img src="img/portada.webp" alt="Calle de un pueblo al atardecer con el título Fora de Lugar" width="1024" height="683" decoding="async" fetchpriority="high">
+      <div class="texto">
+        <div>
+          <h1>Fora de Lugar</h1>
+          <p>Lejos de casa, cerca de tu historia. Un videojuego narrativo 2D de simulación de vida en pixel art sobre la experiencia de los estudiantes foráneos.</p>
+          <a class="cue" href="#historia">▾ Desliza para explorar</a>
+        </div>
+        <div class="pepe" role="img" aria-label="Pepe caminando con una bandeja"></div>
+      </div>
+    </div>
+    <div class="demo" id="demo2">
+      <div class="demo-header">
+        <strong>🕹️ Demo Jugable </strong>
+      </div>
+      <p>Puedes probar el prototipo directamente desde tu navegador o descargarlo para escritorio.</p>
+      <div class="acciones-hero">
+            <a class="btn" href="https://al075462uacammx.itch.io/fora-de-lugar-demo" target="_blank" rel="noopener">🎮 Jugar Demo en itch.io</a>
+            <a class="btn" href="https://aaron-david-chi-uc.itch.io/fora-de-lugar-execute-version" target="_blank" rel="noopener">🎮 Descargar Demo para escritorio</a>
+            
+          </div>
+            <!-- <a class="cue" href="#historia">▾ Desliza para explorar</a>-->
+          </div>
+      
+  </section>
+
+  <!-- SECCIÓN HISTORIA -->
+  <section id="historia">
+    <h2 class="t">Historia</h2>
+    <p>Pepe es un estudiante de Ingeniería en Tecnología de Software que se traslada de Seybaplaya a Campeche para continuar sus estudios universitarios. El juego plantea un semestre de 90 días dividido en diez actos. El demo actual abarca las primeras vivencias de su transición.</p>
+    <p><em>Fora de Lugar</em> visibiliza los retos reales que afrontan los jóvenes al independizarse: presupuestar gastos, pagar alquiler, gestionar su alimentación, trasladarse en la ciudad, así como trabajar y estudiar simultáneamente.</p>
+    
+    <h3>Origen del Proyecto</h3>
+    <p>La idea surgió durante el tercer semestre en la materia de Programación Orientada a Objetos (POO), trabajando originalmente en Greenfoot. Nació a partir de las vivencias compartidas por compañeros foráneos y posteriormente el desarrollo migró a <strong>Godot Engine 4</strong>.</p>
+    
+    <h3>Mecánicas Principales</h3>
+    <div class="mecanicas">
+      <div><strong>🗺️ Exploración 2D</strong> Recorrido por la ciudad y locaciones clave de la vida foránea.</div>
+      <div><strong>🎭 Toma de Decisiones</strong> Elecciones narrativas con consecuencias e impacto en la historia.</div>
+      <div><strong>💬 Sistema de Diálogos</strong> Interacción fluida con familiares, amigos y empleadores.</div>
+      <div><strong>🧠 Reacción Emocional</strong> Las emociones del protagonista abren o cierran opciones.</div>
+      <div><strong>⚖️ Gestión de Recursos</strong> Control equilibrado de dinero, tiempo y despensa.</div>
+      <div><strong>🎮 Minijuegos Cotidianos</strong> Desafíos interactivos inspirados en tareas de la vida diaria.</div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PERSONAJES -->
+  <section id="personajes">
+    <h2 class="t">Personajes</h2>
+    <div class="rejilla">
+      <article class="tarjeta">
+        <div class="retrato"><img src="img/retrato-pepe.webp" alt="Retrato de Pepe" width="350" height="432" decoding="async" loading="lazy"></div>
+        <h3>Pepe</h3>
+        <p class="rol">Protagonista</p>
+        <p>Estudiante de Ingeniería en Tecnología de Software procedente de Seybaplaya, decidido a salir adelante en la capital.</p>
+      </article>
+      <article class="tarjeta">
+        <div class="retrato"><img src="img/retrato-mama.webp" alt="Retrato de la mamá de Pepe" width="365" height="436" decoding="async" loading="lazy"></div>
+        <h3>Mamá de Pepe</h3>
+        <p class="rol">Apoyo a Distancia</p>
+        <p>Acompaña a Pepe mediante llamadas frecuentes con consejos y recordatorios para cuidar su salud y presupuesto.</p>
+      </article>
+      <article class="tarjeta">
+        <div class="retrato"><img src="img/retrato-dona-mary.webp" alt="Retrato de Doña Mary" width="355" height="440" decoding="async" loading="lazy"></div>
+        <h3>Doña Mary</h3>
+        <p class="rol">Dueña del Puesto de Panuchos</p>
+        <p>Comerciante local de gran corazón que brinda a Pepe la oportunidad de trabajar como mesero para generar ingresos.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECCIÓN ESCENAS DEL DEMO -->
+  <section id="escenas">
+    <div class="encabezado-seccion">
+      <h2 class="t">Escenas del Demo</h2>
+      <div class="controles-vista">
+        <span class="lbl-modo">Modo de lectura:</span>
+        <button id="btn-vista-escenas" class="btn-modo-vista" type="button" title="Alternar modo de lectura fluida">
+          <span class="icon">🖼️</span> <span class="txt">Vista Galería Activa</span>
+        </button>
+      </div>
+    </div>
+    <p>Explora la secuencia narrativa del prototipo. Diseñado con renderizado acelerado por GPU para desplazamiento rápido sin tirones.</p>
+
+    <!-- Selector rápido de actos Sticky -->
+    <div class="selector-actos-rapido" role="tablist" aria-label="Navegación rápida de escenas">
+      <button class="chip-acto activo" data-acto="0">Acto 1</button>
+      <button class="chip-acto" data-acto="1">Acto 2</button>
+      <button class="chip-acto" data-acto="2">Acto 3</button>
+      <button class="chip-acto" data-acto="3">Acto 4</button>
+      <button class="chip-acto" data-acto="4">Acto 5</button>
+      <button class="chip-acto" data-acto="5">Acto 6</button>
+      <button class="chip-acto" data-acto="6">Acto 7</button>
+      <button class="chip-acto" data-acto="7">Acto 8</button>
+      <button class="chip-acto" data-acto="8">Acto 9</button>
+      <button class="chip-acto" data-acto="9">Acto 10</button>
+    </div>
+
+    <!-- Lista interactiva de escenas -->
+    <div class="contenedor-escenas-v2" id="galeria-escenas-v2">
+      <article class="tarjeta-escena render-optimizado" data-index="0" id="acto-1">
+        <div class="escena-badge"><span class="num">ACTO 01</span><span class="tag">Inicio del viaje</span></div>
+        <div class="escena-contenido">
+          <h3>La Llegada</h3>
+          <p>Pepe aborda la combi desde Seybaplaya con sus maletas llenas de sueños y la incertidumbre de vivir por primera vez solo en la ciudad.</p>
+          <div class="grid-fotos-escena">
+            <figure class="foto-zoom"><img src="img/escena-01a.webp" alt="Pepe sentado en la combi mirando por la ventana al atardecer" loading="lazy" width="900" height="610" decoding="async"><figcaption>Pepe en la combi camino a Campeche</figcaption></figure>
+            <figure class="foto-zoom"><img src="img/escena-01b.webp" alt="Pepe de espaldas frente a una puerta abierta con dos maletas" loading="lazy" width="900" height="565" decoding="async"><figcaption>Llegada a su nuevo cuarto de renta</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-escena render-optimizado" data-index="1" id="acto-2">
+        <div class="escena-badge"><span class="num">ACTO 02</span><span class="tag">El espacio propio</span></div>
+        <div class="escena-contenido">
+          <h3>El Cuarto</h3>
+          <p>Al llegar a su alojamiento, Pepe debe desembalar y acondicionar el espacio. Se activa el minijuego de limpieza de habitación.</p>
+          <div class="grid-fotos-escena">
+            <figure class="foto-zoom"><img src="img/escena-02.webp" alt="Pepe acostado recordando a su mamá que le dice que ordene su cuarto" loading="lazy" width="900" height="562" decoding="async"><figcaption>Instalándose en su habitación</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-escena render-optimizado" data-index="2" id="acto-3">
+        <div class="escena-badge"><span class="num">ACTO 03</span><span class="tag">Conexión familiar</span></div>
+        <div class="escena-contenido">
+          <h3>Camino al Súper</h3>
+          <p>Mientras camina por las calles desconocidas hacia el supermercado, recibe una llamada confortante de su madre.</p>
+          <div class="cita-dialogo">
+            <span class="avatar-speaker">📱</span>
+            <blockquote>«Está bien, hijo. Compra solo lo necesario y no gastes de más. Cuídate mucho.»</blockquote>
+          </div>
+          <div class="grid-fotos-escena">
+            <figure class="foto-zoom"><img src="img/escena-03.webp" alt="Pepe caminando por la calle mientras habla por teléfono con su mamá" loading="lazy" width="900" height="574" decoding="async"><figcaption>Llamada de Mamá camino a las compras</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-escena render-optimizado" data-index="3" id="acto-4">
+        <div class="escena-badge"><span class="num">ACTO 04</span><span class="tag">Realidad económica</span></div>
+        <div class="escena-contenido">
+          <h3>El Súper</h3>
+          <p>Pepe realiza su primera compra con un presupuesto estricto de $600 pesos en el minijuego del supermercado.</p>
+          <div class="grid-fotos-escena">
+            <figure class="foto-zoom"><img src="img/escena-04.webp" alt="Pepe sorprendido frente a la cajera con el carrito lleno" loading="lazy" width="900" height="550" decoding="async"><figcaption>Sorpresa ante la cuenta en la caja registradora</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-escena render-optimizado" data-index="4" id="acto-5">
+        <div class="escena-badge"><span class="num">ACTO 05</span><span class="tag">Búsqueda de empleo</span></div>
+        <div class="escena-contenido">
+          <h3>Sin Dinero</h3>
+          <p>Tras calcular los gastos restantes, Pepe comprende que necesita ingresos inmediatos. Recorre el vecindario hasta pedir empleo con Doña Mary.</p>
+          <div class="cita-dialogo">
+            <span class="avatar-speaker">💭</span>
+            <blockquote>«Creo que me emocioné con la despensa... Ahora necesito conseguir un trabajo cuanto antes.»</blockquote>
+          </div>
+          <div class="grid-fotos-escena tres-cols">
+            <figure class="foto-zoom"><img src="img/escena-05a.webp" alt="Manos contando un billete de cien pesos y monedas" loading="lazy" width="900" height="523" decoding="async"><figcaption>Contando las últimas monedas</figcaption></figure>
+            <figure class="foto-zoom"><img src="img/escena-05b.webp" alt="Fachada del puesto de Doña Mary con una mesa afuera" loading="lazy" width="900" height="522" decoding="async"><figcaption>El puesto de panuchos de Doña Mary</figcaption></figure>
+            <figure class="foto-zoom"><img src="img/escena-05c.webp" alt="Pepe hablando con Doña Mary a través de la ventana de la cocina" loading="lazy" width="880" height="560" decoding="async"><figcaption>Doña Mary le otorga la oportunidad</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-escena render-optimizado" data-index="5" id="acto-6">
+        <div class="escena-badge"><span class="num">ACTO 06</span><span class="tag">Primer empleo</span></div>
+        <div class="escena-contenido">
+          <h3>El Restaurante</h3>
+          <p>Comienza el turno de trabajo de Pepe. Servir platillos rápidamente a las mesas mientras esquiva obstáculos urbanos.</p>
+          <div class="grid-fotos-escena">
+            <figure class="foto-zoom"><img src="img/escena-06.webp" alt="Pepe entre las mesas del restaurante con el contador de platillos entregados" loading="lazy" width="900" height="532" decoding="async"><figcaption>Atendiendo mesas en el puesto</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-escena render-optimizado" data-index="6" id="acto-7">
+        <div class="escena-badge"><span class="num">ACTO 07</span><span class="tag">Choque social</span></div>
+        <div class="escena-contenido">
+          <h3>La Escuela</h3>
+          <p>Asiste a sus asignaturas en la facultad. Observa el desenfado de otros compañeros y experimenta nostalgia por su pueblo natal.</p>
+          <div class="grid-fotos-escena">
+            <figure class="foto-zoom"><img src="img/escena-07.webp" alt="Pepe de espaldas viendo a un grupo de compañeros reír en la escuela" loading="lazy" width="900" height="543" decoding="async"><figcaption>Reflexión solitaria en el campus universitario</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-escena render-optimizado" data-index="7" id="acto-8">
+        <div class="escena-badge"><span class="num">ACTO 08</span><span class="tag">Trayecto de vuelta</span></div>
+        <div class="escena-contenido">
+          <h3>El Camión</h3>
+          <p>En el transporte público nocturno, Pepe procesa el agotamiento físico e introspectivo del día a día.</p>
+          <div class="cita-dialogo">
+            <span class="avatar-speaker">🚌</span>
+            <blockquote>«Ver a todos tan adaptados en la escuela... a veces me hace sentir fuera de lugar.»</blockquote>
+          </div>
+          <div class="grid-fotos-escena">
+            <figure class="foto-zoom"><img src="img/escena-08.webp" alt="Pepe abrazándose en el camión con el atardecer de fondo" loading="lazy" width="900" height="504" decoding="async"><figcaption>Viaje nocturno de regreso al cuarto</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-escena render-optimizado" data-index="8" id="acto-9">
+        <div class="escena-badge"><span class="num">ACTO 09</span><span class="tag">Introspección</span></div>
+        <div class="escena-contenido">
+          <h3>De Vuelta en su Cuarto</h3>
+          <p>La sobrecarga de responsabilidades lo lleva a reflexionar sobre su capacidad para balancear la carrera profesional y el trabajo.</p>
+          <div class="cita-dialogo">
+            <span class="avatar-speaker">🌙</span>
+            <blockquote>«¿Cómo voy a equilibrar la universidad y el trabajo? Apenas puedo con todo... Extraño mi casa.»</blockquote>
+          </div>
+          <div class="grid-fotos-escena">
+            <figure class="foto-zoom"><img src="img/escena-09.webp" alt="Pepe sentado en el piso de su cuarto con las manos en la cabeza" loading="lazy" width="900" height="555" decoding="async"><figcaption>Desahogo emocional en la soledad de la noche</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="tarjeta-escena render-optimizado" data-index="9" id="acto-10">
+        <div class="escena-badge"><span class="num">ACTO 10</span><span class="tag">Resiliencia</span></div>
+        <div class="escena-contenido">
+          <h3>Pasan los Días</h3>
+          <p>Con la repetición del esfuerzo surge la adaptación. Pepe se ajusta el mandil para un nuevo día con mayor firmeza emocional.</p>
+          <div class="cita-dialogo">
+            <span class="avatar-speaker">🌅</span>
+            <blockquote>«Escuela, trabajo y la misma rutina... Aunque últimamente el peso se siente un poco más ligero.»</blockquote>
+          </div>
+          <div class="grid-fotos-escena">
+            <figure class="foto-zoom"><img src="img/escena-10.webp" alt="Pepe de espaldas amarrándose el mandil en la cocina" loading="lazy" width="900" height="523" decoding="async"><figcaption>Afrontando la rutina diaria con determinación</figcaption></figure>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECCIÓN PROCESO DE DESARROLLO -->
+  <section id="desarrollo">
+    <h2 class="t">Proceso de Desarrollo</h2>
+
+    <!-- HERRAMIENTAS -->
+    <div id="herramientas" class="bloque-desarrollo render-optimizado">
+      <h3>🛠️ Stack Tecnológico y Herramientas</h3>
+      <p>El proyecto combina tecnologías modernas de motores de juego con herramientas especializadas en arte de píxeles:</p>
+
+      <div class="grid-herramientas">
+        <div class="card-herramienta">
+          <div class="tech-icon">🤖</div>
+          <h4>Godot Engine 4</h4>
+          <p>Motor principal programado en GDScript para la lógica de estados, minijuegos y físicas 2D.</p>
+        </div>
+        <div class="card-herramienta">
+          <div class="tech-icon">🎨</div>
+          <h4>Pixilart</h4>
+          <p>Creación de spritesheets, animaciones por cuadros (frame-by-frame) y fondos en estética 8-bit / 16-bit.</p>
+        </div>
+        <div class="card-herramienta">
+          <div class="tech-icon">🐙</div>
+          <h4>GitHub</h4>
+          <p>Control de versiones colaborativo entre los desarrolladores back-end y diseñadores front-end.</p>
+        </div>
+        <div class="card-herramienta">
+          <div class="tech-icon">💡</div>
+          <h4>Greenfoot (Prototipo)</h4>
+          <p>Entorno inicial de pruebas conceptuales utilizado durante las primeras fases de diseño académico.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MINIJUEGOS SHOWCASE -->
+    <div id="minijuegos" class="bloque-desarrollo render-optimizado">
+      <h3>🎮 Showcase de Minijuegos</h3>
+      <p>Selecciona un minijuego para inspeccionar sus mecánicas, objetivos y esquema de controles:</p>
+
+      <div class="tabs-minijuegos" role="tablist">
+        <button class="tab-mj activo" data-mj="mj-limpieza" role="tab" aria-selected="true">🧹 1. Limpiar el Cuarto</button>
+        <button class="tab-mj" data-mj="mj-super" role="tab" aria-selected="false">🛒 2. Compras en el Súper</button>
+        <button class="tab-mj" data-mj="mj-mesero" role="tab" aria-selected="false">🍲 3. Servir Platillos</button>
+      </div>
+
+      <div class="panel-minijuego activo" id="mj-limpieza" role="tabpanel">
+        <div class="mj-header">
+          <h4>Minijuego: Limpieza de la Habitación</h4>
+          <span class="badge-dificultad">Dificultad: Fácil</span>
+        </div>
+        <p>Pepe debe ordenar su cuarto para recuperar comodidad y reducir el desorden acumulado tras la mudanza.</p>
+        
+        <div class="arcade-card">
+          <h5>🎮 Esquema de Mandos y Teclas</h5>
+          <div class="grid-teclas-arcade">
+            <div class="tecla-item"><kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> <span>Mover a Pepe por la habitación</span></div>
+            <div class="tecla-item"><kbd>A</kbd> <span>Mantener presionado para sacudir nubes de polvo</span></div>
+            <div class="tecla-item"><kbd>Espacio</kbd> <span>Depositar la basura recogida en el bote</span></div>
+            <div class="tecla-item"><kbd>Mouse</kbd> <span>Arrastrar muebles hasta sus siluetas en el piso</span></div>
+          </div>
+        </div>
+
+        <div class="fotos">
+          <figure class="foto-zoom"><img src="img/minijuego-limpiar-1.webp" alt="Barrer el cuarto" loading="lazy" width="900" height="548" decoding="async"><figcaption>Recolección de basura y nubes de polvo</figcaption></figure>
+          <figure class="foto-zoom"><img src="img/minijuego-limpiar-2.webp" alt="Acomodar los muebles" loading="lazy" width="900" height="537" decoding="async"><figcaption>Colocación de muebles sobre siluetas indicadoras</figcaption></figure>
+          <figure class="foto-zoom"><img src="img/minijuego-limpiar-3.webp" alt="Controles del minijuego" loading="lazy" width="900" height="538" decoding="async"><figcaption>Pantalla de tutorial e instrucciones</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="panel-minijuego" id="mj-super" role="tabpanel">
+        <div class="mj-header">
+          <h4>Minijuego: Despensa Estratégica</h4>
+          <span class="badge-dificultad">Dificultad: Media</span>
+        </div>
+        <p>Administra un presupuesto limitado de $600 pesos en el supermercado asegurando la lista de alimentos vitales.</p>
+
+        <div class="arcade-card">
+          <h5>🎮 Esquema de Mandos y Teclas</h5>
+          <div class="grid-teclas-arcade">
+            <div class="tecla-item"><kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> <span>Recorrer los pasillos numerados del supermercado</span></div>
+            <div class="tecla-item"><kbd>A</kbd> <span>Entrar al portal de un pasillo / tomar producto</span></div>
+            <div class="tecla-item"><kbd>Backspace</kbd> <span>Regresar al área principal de cajas</span></div>
+            <div class="tecla-item"><kbd>Enter</kbd> <span>Concluir la compra y realizar el cobro en caja</span></div>
+          </div>
+        </div>
+
+        <div class="fotos">
+          <figure class="foto-zoom"><img src="img/minijuego-super-1.webp" alt="Mapa del supermercado" loading="lazy" width="900" height="535" decoding="async"><figcaption>Recorrido por pasillos y monitoreo de saldo</figcaption></figure>
+          <figure class="foto-zoom"><img src="img/minijuego-super-2.webp" alt="Pantalla de lista de despensa" loading="lazy" width="900" height="606" decoding="async"><figcaption>Lista de productos solicitados vs presupuesto disponible</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="panel-minijuego" id="mj-mesero" role="tabpanel">
+        <div class="mj-header">
+          <h4>Minijuego: Servicio de Mesero</h4>
+          <span class="badge-dificultad">Dificultad: Desafío</span>
+        </div>
+        <p>Atiende a los comensales en el puesto de Doña Mary sirviendo 5 platillos correctamente mientras esquivas perritos en movimiento.</p>
+
+        <div class="arcade-card">
+          <h5>🎮 Esquema de Mandos y Teclas</h5>
+          <div class="grid-teclas-arcade">
+            <div class="tecla-item"><kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> <span>Desplazamiento ágil entre el mostrador y las mesas</span></div>
+            <div class="tecla-item"><kbd>Acercarse</kbd> <span>Entregar automáticamente el platillo a la mesa activa</span></div>
+            <div class="tecla-item"><kbd>Meta</kbd> <span>Completar 5 entregas exitosas antes de agotar los corazones</span></div>
+            <div class="tecla-item"><kbd>¡Atención!</kbd> <span>Evitar colisionar con perritos (cada choque resta 1 corazón)</span></div>
+          </div>
+        </div>
+
+        <div class="fotos">
+          <figure class="foto-zoom"><img src="img/minijuego-restaurante.webp" alt="Pantalla de restaurante" loading="lazy" width="900" height="638" decoding="async"><figcaption>Dinámica de entrega rápida y esquive de obstáculos</figcaption></figure>
+        </div>
+      </div>
+    </div>
+    <div class="demo" id="demomenu">
+      <div class="demo-header">
+        <strong>🕹️ Demo Jugable </strong>
+      </div>
+      <p>Puedes probar el prototipo directamente desde tu navegador o descargarlo para escritorio.</p>
+      <div class="acciones-hero">
+            <a class="btn" href="https://al075462uacammx.itch.io/fora-de-lugar-demo" target="_blank" rel="noopener">🎮 Jugar Demo en itch.io</a>
+            <a class="btn" href="https://aaron-david-chi-uc.itch.io/fora-de-lugar-execute-version" target="_blank" rel="noopener">🎮 Descargar Demo para escritorio</a>
+            
+          </div>
+            <!-- <a class="cue" href="#historia">▾ Desliza para explorar</a>-->
+          </div>
+
+    <!-- ARTE Y DISEÑO -->
+    <div id="arte" class="bloque-desarrollo render-optimizado">
+      <h3>🖼️ Arte y Diseño Pixel Art</h3>
+      <p>Muestra del proceso creativo visual, paletas de color para escenas de día/noche y bocetos de escenarios:</p>
+
+      <div class="galeria">
+        <figure class="foto-zoom"><img src="img/arte-1.webp" alt="Collage del proyecto" loading="lazy" width="1100" height="733" decoding="async"><figcaption>Composición general del concepto visual</figcaption></figure>
+        <figure class="foto-zoom"><img src="img/arte-2.webp" alt="Cuarto vacío" loading="lazy" width="1000" height="563" decoding="async"><figcaption>Diseño de interiores: cuarto de renta desamueblado</figcaption></figure>
+        <figure class="foto-zoom"><img src="img/arte-3.webp" alt="Pepe acostado en la noche" loading="lazy" width="1000" height="750" decoding="async"><figcaption>Ilustración de tono nostálgico nocturno</figcaption></figure>
+        <figure class="foto-zoom"><img src="img/arte-4.webp" alt="Contando pesos" loading="lazy" width="1000" height="750" decoding="async"><figcaption>Sprite macro: gestión de billetes y monedas</figcaption></figure>
+      </div>
+      <div class="pendiente">Bitácora técnica de ilustración: referencias de arquitectura campechana y paleta de tonos al atardecer.</div>
+    </div>
+
+    <!-- ENCUESTA -->
+    <div id="encuesta" class="bloque-desarrollo render-optimizado">
+      <h3>📊 Estudio de Impacto: Encuesta «Viviendo Lejos»</h3>
+      <p>Para medir el efecto transformador del juego, el equipo diseñó el cuestionario <em>«Viviendo Lejos: Experiencias de Estudiantes Foráneos»</em>.</p>
+      <p>Se evalúa la empatía en estudiantes no foráneos mediante cuestionarios comparativos antes y después de la sesión de juego.</p>
+      <div class="pendiente">Tabla consolidada de resultados y número total de estudiantes evaluados en la muestra.</div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN ACTUALIDAD -->
+  <section id="actualidad">
+    <h2 class="t">Estado Actual del Proyecto</h2>
+    <p><em>Fora de Lugar</em> cuenta con una propuesta narrativa sólida y prototipos totalmente funcionales en Godot 4. Se estructuraron los 10 actos de la historia base, el diseño artístico pixel art y la integración de tres minijuegos mecánicos.</p>
+    <p>El demo disponible incluye la primera etapa del semestre, lista para pruebas de usuario.</p>
+  </section>
+
+  <!-- SECCIÓN FUTURO -->
+  <section id="futuro">
+    <h2 class="t">Desarrollo Futuro</h2>
+    <p>La hoja de ruta contempla expandir la ramificación narrativa con múltiples finales según la gestión emocional y de recursos del jugador.</p>
+    <p>Se liberarán los Actos 7 a 10 en fases posteriores, añadiendo más opciones de empleo, eventos universitarios e interacciones con nuevos personajes en la ciudad de Campeche.</p>
+  </section>
+
+  <!-- SECCIÓN DOCUMENTACIÓN -->
+  <section id="documentacion">
+    <h2 class="t">Documentación Científica</h2>
+    <p>Resumen del reporte científico en desarrollo por parte del equipo universitario:</p>
+    
+    <h3>Pregunta de Investigación</h3>
+    <p class="cita">«¿En qué medida una experiencia interactiva como Fora de Lugar puede contribuir a generar conciencia y empatía sobre las dificultades que enfrentan los estudiantes foráneos al vivir lejos de su lugar de origen?»</p>
+    
+    <h3>Objetivo General</h3>
+    <p>Evaluar estadísticamente si jugar <em>Fora de Lugar</em> incrementa la sensibilización social en estudiantes universitarios no foráneos.</p>
+    
+    <h3>Hipótesis</h3>
+    <p>La inmersión interactiva en las problemáticas de Pepe incrementará significativamente los índices de percepción de dificultades económicas, emocionales y académicas.</p>
+    
+    <div class="pendiente">Descarga del Reporte de Investigación en PDF y Diapositivas de Presentación.</div>
+  </section>
+
+  <!-- SECCIÓN EQUIPO -->
+  <section id="equipo">
+    <h2 class="t">Equipo Desarrollador</h2>
+    <div class="rejilla">
+      <article class="tarjeta">
+        <h3>María Fernanda Suárez Arias</h3>
+        <p class="rol">Diseño Visual & Front-End</p>
+        <p class="equipo-correo"><a href="mailto:al069840@uacam.mx">al069840@uacam.mx</a></p>
+      </article>
+      <article class="tarjeta">
+        <h3>Aldair E. Canul Cabrera</h3>
+        <p class="rol">Desarrollador Back-End & Gameplay</p>
+        <p class="equipo-correo"><a href="mailto:al075462@uacam.mx">al075462@uacam.mx</a></p>
+      </article>
+      <article class="tarjeta">
+        <h3>Aaron D. Chi Uc</h3>
+        <p class="rol">Desarrollador Back-End & Mecánicas</p>
+        <p class="equipo-correo"><a href="mailto:al076228@uacam.mx">al076228@uacam.mx</a></p>
+      </article>
+    </div>
+
+    <h3>Asesoría Académica</h3>
+    <div class="rejilla">
+      <article class="tarjeta">
+        <h3>Dr. Justino Ramírez Ortegón</h3>
+        <p class="rol">Asesor Principal</p>
+      </article>
+      <article class="tarjeta">
+        <h3>Dr. Joel C. Flores Escalante</h3>
+        <p class="rol">Coasesor</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECCIÓN HISTORIAL DE VERSIONES -->
+  <section id="versiones">
+    <h2 class="t">Historial de Versiones</h2>
+    <div class="pendiente">Changelog oficial de versiones del demo y parches de corrección.</div>
+  </section>
+</main>
+
+<footer>
+  <img src="img/perrito.webp" alt="Perrito en pixel art" width="306" height="270" decoding="async" loading="lazy">
+  <span>© 2026 Universidad Autónoma de Campeche · Facultad de Ingeniería. Todos los derechos reservados.</span>
+</footer>
+
+<!-- Lightbox Modal Optimizado para Imágenes y Galerías -->
+<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Visor interactivo de imágenes">
+  <div class="lightbox-overlay"></div>
+  <div class="lightbox-contenedor">
+    <button class="lightbox-cerrar" type="button" aria-label="Cerrar modal">✕</button>
+    <div class="lightbox-marco">
+      <img id="lightbox-img" src="" alt="Vista ampliada">
+    </div>
+    <div class="lightbox-pie">
+      <span id="lightbox-caption"></span>
+      <span id="lightbox-contador"></span>
+    </div>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Imagen anterior">◀</button>
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Siguiente imagen">▶</button>
+  </div>
+</div>
+
+<script src="script2.js"></script>
+</body>
+</html>
